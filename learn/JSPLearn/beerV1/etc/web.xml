@@ -1,0 +1,42 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+    <servlet>
+        <servlet-name>Ch3 Beer</servlet-name>
+        <servlet-class>com.example.web.BeerSelect</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Ch3 Email</servlet-name>
+        <servlet-class>com.example.web.ShowEmail</servlet-class>
+        <init-param>
+            <param-name>adminEmail</param-name>
+            <param-value>huichiensheng@163.com</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>ListenerTester</servlet-name>
+        <servlet-class>com.example.ListenerTester</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Ch3 Beer</servlet-name>
+        <url-pattern>/SelectBeer.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ch3 Email</servlet-name>
+        <url-pattern>/ShowEmail.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListenerTester</servlet-name>
+        <url-pattern>/ListenTest.do</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>breed</param-name>
+        <param-value>langgou</param-value>
+    </context-param>
+    <listener>
+        <listener-class>com.example.MyServletContextListener</listener-class>
+    </listener>
+</web-app>

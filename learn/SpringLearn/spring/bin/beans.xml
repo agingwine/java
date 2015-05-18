@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+           <!-- 打开注解处理器 -->
+           <context:annotation-config></context:annotation-config>
+	<bean id="personService" class="com.racer.springtest.service.impl.PersonServiceBean" scope="prototype" 
+	init-method="init" destroy-method="destroy">
+		<!-- 使用setter方法进行依赖注入  -->
+		<!--  使用ref进行依赖对象注入-->
+		<property name="personDao" ref="personDao"></property>
+		
+		<!-- 使用内部bean进行依赖对象注入 -->
+		<!-- <property name="personDao">
+			<bean class="com.racer.springtest.dao.impl.PersonDaoBean"></bean>
+		</property> -->
+		<!-- 基本类型注入 -->
+		<property name="name" value="racer"></property>
+		<property name="id" value="88"></property>
+		<!-- 泛型类型注入 -->
+		<property name="sets">
+			<set>
+				<value>"第一个"</value>
+				<value>"第二个"</value>
+				<value>"第三个"</value>
+			</set>
+		</property>
+		<property name="lists">
+			<list>
+				<value>"第一个"</value>
+				<value>"第二个"</value>
+				<value>"第三个"</value>
+			</list>
+		</property>
+		<property name="properties">
+			<props>
+				<prop key="key1">value1</prop>
+				<prop key="key2">value2</prop>
+				<prop key="key3">value3</prop>
+			</props>
+		</property>
+		<property name="maps">
+			<map>
+				<entry key="key-1" value="value-1"></entry>
+				<entry key="key-2" value="value-2"></entry>
+				<entry key="key-3" value="value-3"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!--  使用构造器进行依赖注入 -->
+	<bean id="personService1" class="com.racer.springtest.service.impl.PersonServiceBean">
+		<constructor-arg index="0" type="com.racer.springtest.dao.PersonDao" ref="personDao"></constructor-arg>
+		<constructor-arg index="1" value="racer"></constructor-arg>
+	</bean>
+	
+	<bean id="personDao" class="com.racer.springtest.dao.impl.PersonDaoBean"></bean>
+	
+	<!-- 通过工厂方法实例化bean  -->
+	<!-- 
+	<bean id="personService2" class="com.racer.springtest.service.impl.PersonServiceBeanFactory" 
+	factory-method="createPersonServiceBean" ></bean>
+	<bean id="personServiceFactory" class="com.racer.springtest.service.impl.PersonServiceBeanFactory"/>
+	<bean id="personService3"  factory-bean="personServiceFactory" 
+	factory-method="createPersonServiceBean2" >
+	</bean>
+	 -->
+
+  <!-- more bean definitions go here -->
+
+</beans>

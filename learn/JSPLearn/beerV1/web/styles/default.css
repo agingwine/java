@@ -1,0 +1,246 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td,iframe
+{
+	margin:0;
+	padding:0;
+}
+body,button,input,select,textarea{
+	font:400 16px/1.25 Microsoft YaHei,SimSuncss,arial;
+}
+
+body{
+	color:#000;
+}
+
+.container{
+	min-width: 1200px;
+	min-height: 100%;
+	background-color: #fff;
+}
+.header{
+	height: 150px;
+	min-width: 1200px;
+	z-index: 99;
+}
+
+.top{
+	height: 110px;
+	background: #3366cc url(images/top_background.png) no-repeat;
+	background-size:100% 110px;
+	-moz-background-size:100% 100%; /* 老版本的 Firefox */
+}
+
+.navigator{
+	height: 40px;
+	background: #3366cc url(images/nav_background.png) 50% 50% repeat-x;
+	text-align: center;
+}
+
+.maincontent{
+	padding-bottom: 30px;
+}
+
+.maincontent .toolbar{
+	background: #fff;
+	border-bottom: 1px solid #03f;
+	height: 35px;
+}
+
+.maincontent .result{
+	background: #fff;
+}
+
+.maincontent .gis{
+	background: #fff;
+	height: 400px;
+}
+.footer{
+	border-top: 1px solid #03f;
+	position: fixed;
+	bottom:0;
+	left: 0;
+	height: 30px;
+	width: 100%;
+	clear: both;
+	background: #ccc;
+}
+
+.header a,.header a:hover{
+	color:#fff;
+	text-decoration:none;
+}
+
+.header .nav{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+	list-style: none;
+}
+.header .nav li.menu-item{
+	float:left;
+	margin-top: 8px;
+	padding:0 20px;
+	background:url(images/nav_line.png) 0 1px no-repeat;
+	position: relative;
+	z-index: 9999;
+}
+.header .nav li.first{background:none;}
+.header .nav li.menu-item a{
+	font:400 20px/1.25 \5FAE\8F6F\96C5\9ED1;
+	text-align:center;
+	text-decoration:none;
+	display: block;
+	height:30px;
+}
+.header .nav li.menu-item a:hover{color:#afafaf;}
+
+.header .nav .menu-item:hover div{
+	display: block;
+}
+
+.header .nav .menu-item div{
+	display:none;
+	background: #3366cc url(images/nav_background.png) 50% 50% repeat-x;
+	border:1px solid #ccc;
+	border-radius:5px;
+	position:absolute;
+	top:30px;
+	/*left:50%;
+	margin-left:-49%;*/
+	-webkit-box-shadow:0 0 4px rgba(0,0,0,.02),0 2px 5px rgba(0,0,0,.1);
+	-moz-box-shadow:0 0 4px rgba(0,0,0,.02),0 2px 5px rgba(0,0,0,.1);
+	box-shadow:0 0 4px rgba(0,0,0,.02),0 2px 5px rgba(0,0,0,.1);
+	width:98%;
+}
+.header .nav .menu-item div .menu-arrow {
+	display:block;
+	font-size:0;
+	height:7px;
+	position:absolute;
+	top:-7px;
+	width:14px;
+	margin-left:-7px;
+	left:50%;
+	background: url(images/nav_arrow.png);
+}
+
+.header .nav .menu-item div a{
+	width: 100%;
+	margin:0 auto;
+	padding-bottom: 5px;
+	border-bottom:1px solid #ccc;
+	height:30px;
+	line-height:40px;
+	*zoom:1;
+}
+
+.header .nav .menu-item div a.menu-list-last{
+	border: none;
+}
+
+.header .nav .menu-item a.menu-current{
+	color:#ffcc00;
+}
+
+.header .nav .menu-item .menu-more {
+	-webkit-text-size-adjust:none;
+	font-size:0;
+	padding:3px 5px;
+	position:relative;
+	top:-6px;
+	left:6px;
+	z-index:99;
+	_margin-top:22px;
+	_top:0px;
+	*zoom:1;
+	background: url(images/nav_more.png) no-repeat;
+
+}
+
+.header .nav .menu-item div table{
+	margin: 0 auto;
+	vertical-align: center;
+	text-align: center;
+	border-collapse: collapse;
+}
+.header .nav .menu-item div table tr{
+	text-align: center;
+}
+.header .nav .menu-item div table td{
+	padding: 0 5px;
+}
+
+.maincontent .toolbar .toolbar-item{
+	text-align: center;
+	vertical-align: center;
+	float: left;
+	position: relative;
+	margin: 0 10px;
+	top:3px;
+}
+.maincontent .toolbar .toolbar-item label{
+	margin-right: 2px;
+}
+.maincontent .toolbar .toolbar-item input[type=text]{
+	position: relative;
+	width: 200px;
+	height: 26px;
+}
+.maincontent .toolbar button{
+	width: 115px;
+	height:30px;
+}
+
+.maincontent .toolbar button span.ui-button-text{
+	padding:0 0 0 10px;
+}
+
+.maincontent .toolbar select{
+	height: 28px;
+}
+.maincontent .toolbar .ui-selectmenu-text{
+	padding: 2px 0 0 8px;
+}
+
+.maincontent .toolbar .select-label{
+	top:-7px;
+}
+
+.maincontent .toolbar .toolbar-item label{
+	position: relative;
+}
+
+.maincontent .toolbar #start-date,.maincontent .toolbar #end-date{
+	background: url(images/date_select.png) no-repeat;
+	background-position: center right;
+	background-size: auto 90%;
+}
+.maincontent .toolbar #start-date:hover,.maincontent .toolbar #end-date:hover{
+	background: url(images/date_select_hover.png) no-repeat;
+	background-position: center right;
+	background-size: auto 90%;
+}
+
+.ui-datepicker{
+	font-size: 12px;
+}
+
+.maincontent .result .result-grid{
+	width: 600px;
+	margin: 0 auto;
+	padding:10px 0;
+}
+.maincontent .result .result-chart{
+	width: 600px;
+	margin: 0 auto;
+	padding:10px 0;
+}
+.maincontent .result .result-grid .result-table{
+
+}
+
+.top img{
+	height: 100%;
+	width: 100%;
+	src:"images/top_background.jpg";
+	z-index: 9999;
+}
